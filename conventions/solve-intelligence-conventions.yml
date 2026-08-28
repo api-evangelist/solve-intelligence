@@ -1,0 +1,159 @@
+generated: '2026-08-28'
+method: probed
+source: >-
+  Live unauthenticated probes of https://api.solveintelligence.com/ (root, /mcp/, /openapi.json,
+  /docs, /health, /.well-known/*) on 2026-08-28, plus the provider's MCP announcement post
+name: Solve Intelligence API conventions
+description: >-
+  Cross-cutting runtime semantics for the Solve Intelligence public API surface. Coverage here is
+  deliberately partial and every gap is labelled: the only publicly callable surface is the MCP
+  server, its tool schemas are OAuth-gated, and the underlying REST OpenAPI returns HTTP 401.
+  Everything recorded below was observed on an anonymous request or stated by the provider - none
+  of it is inferred from a spec we could not read.
+
+auth:
+  style: OAuth 2.0 bearer token in the Authorization header
+  discovery: RFC 9728 protected-resource metadata plus a conformant 401 challenge
+  detail: See authentication/solve-intelligence-authentication.yml
+  cross_reference: authentication/solve-intelligence-authentication.yml
+
+transport:
+  protocol: Model Context Protocol over streamable HTTP
+  endpoint: https://api.solveintelligence.com/mcp/
+  content_negotiation: >-
+    Clients send Accept: application/json, text/event-stream, per the MCP streamable-HTTP
+    transport.
+  note: >-
+    A GET of /mcp (no trailing slash) returns HTTP 307 to /mcp/. Clients should use the trailing
+    slash form the provider publishes.
+
+server_stack:
+  framework: FastAPI
+  reverse_proxy: nginx
+  identity: SuperTokens
+  evidence: >-
+    Read from the Content-Security-Policy header served by api.solveintelligence.com, which
+    allowlists fastapi.tiangolo.com/img/favicon.png, swagger-ui-dist assets and
+    cdn.jsdelivr.net/gh/supertokens/. The same header sets frame-ancestors to
+    https://copilot.solveintelligence.com, identifying the application host.
+  note: >-
+    The presence of swagger-ui-dist in the CSP and a 401 (not 404) at both /openapi.json and
+    /docs establishes that a real OpenAPI document and Swagger UI exist behind authentication.
+    This is a gated contract, not an absent one.
+
+errors:
+  envelope: bare JSON object
+  shape: '{"message": "<string>"}'
+  content_type: application/json
+  rfc9457: false
+  observed:
+    - status: 401
+      body: '{"message":"unauthorised"}'
+      paths:
+        - /openapi.json
+        - /docs
+    - status: 401
+      body: MCP bearer token is required
+      content_type: text/plain
+      paths:
+        - /mcp/
+      note: >-
+        The MCP endpoint returns text/plain here rather than the JSON envelope used elsewhere on
+        the host, so the error shape is not uniform across surfaces.
+    - status: 404
+      body: 404 Not Found
+      content_type: text/plain
+    - status: 200
+      body: '{"health":"OK"}'
+      paths:
+        - /health
+  cross_reference: null
+  gap: >-
+    No public error reference. The full error catalogue is inside the gated OpenAPI, so
+    errors/solve-intelligence-problem-types.yml was deliberately not written rather than
+    fabricated.
+
+request_tracing:
+  header: X-Request-Id
+  exposed: true
+  detail: >-
+    The API returns an X-Request-Id header (observed value format: a short alphanumeric token,
+    e.g. "PJLN94") and explicitly allowlists it via
+    Access-Control-Expose-Headers: X-Request-Id, so browser and agent clients can read it. This
+    is a real, usable correlation identifier for support escalation.
+  verified: probed
+
+security_headers:
+  strict_transport_security: max-age=31536000; includeSubDomains
+  x_content_type_options: nosniff
+  referrer_policy: strict-origin-when-cross-origin
+  content_security_policy: present
+  frame_ancestors:
+    - 'self'
+    - https://copilot.solveintelligence.com
+
+versioning:
+  scheme: unversioned
+  detail: >-
+    No version segment in the MCP endpoint path and no version header observed. /v1 and /v1/
+    paths return HTTP 404. The MCP protocol version is negotiated in the initialize handshake,
+    which is auth-gated.
+  status: undocumented
+
+pagination:
+  status: unknown
+  note: Not observable - the tool schemas are auth-gated and no REST contract is readable.
+
+rate_limiting:
+  status: undocumented
+  detail: >-
+    No RateLimit-* or X-RateLimit-* headers were returned on any anonymous response, and no
+    limits are published. See rate-limits/solve-intelligence-rate-limits.yml.
+  cross_reference: rate-limits/solve-intelligence-rate-limits.yml
+
+idempotency:
+  supported: unknown
+  status: undocumented
+  detail: >-
+    No idempotency key header is documented and none could be observed against a gated surface.
+    NOTE FOR SCORING: no Idempotency pointer is emitted in apis.yml, because asserting one here
+    would claim a capability that has not been demonstrated.
+
+dry_run_mode:
+  supported: unknown
+  status: undocumented
+
+reversibility:
+  grade: na
+  applicable: false
+  write_surface: false
+  detail: >-
+    The only publicly documented capability of the Solve MCP server is research and retrieval -
+    searching global patent literature, non-patent literature, jurisdictional legal texts and
+    case law, and SEP standard documentation. The provider documents no write, mutation, filing
+    or submission operation on the public MCP surface, so there is no action for an agent to
+    reverse. Reversibility, dry_run_mode and idempotency are all recorded as na/unknown rather
+    than zero.
+  operations: []
+  caveat: >-
+    This na is scoped to the PUBLIC surface only. Document drafting and editing inside the Patent
+    Copilot application is unambiguously a write surface, but it is reached through the web
+    application at copilot.solveintelligence.com and its API is behind the gated OpenAPI. If a
+    future round obtains the contract, reversibility must be re-graded against it - and given
+    that the product's output feeds statutory patent filings with hard, jurisdiction-specific
+    deadlines, the reversal window is high-stakes and must be read from the provider's own docs,
+    never inferred.
+  no_window_asserted: true
+
+sandbox:
+  available: false
+  detail: >-
+    No sandbox, test mode, test credentials or public playground. There is no self-serve signup;
+    access begins with a booked demo and an administrator-enabled subscription.
+
+gaps_blocking_full_conventions:
+  - https://api.solveintelligence.com/openapi.json returns HTTP 401 - the REST contract exists
+    but is not anonymously readable.
+  - https://api.solveintelligence.com/docs (Swagger UI) returns HTTP 401.
+  - MCP tools/list returns HTTP 401 - tool input schemas require an authenticated introspection.
+  - No public developer portal, API reference, changelog or status page exists on the estate.

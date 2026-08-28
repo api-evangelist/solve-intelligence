@@ -1,0 +1,58 @@
+generated: '2026-08-28'
+method: probed
+source: >-
+  Response headers observed on unauthenticated requests to https://api.solveintelligence.com/
+  (/health HTTP 200, /mcp/ HTTP 401, /openapi.json HTTP 401) on 2026-08-28, plus a full search of
+  the provider's public site for a published limits page
+name: Solve Intelligence rate limits
+description: >-
+  Solve Intelligence publishes no rate limits, and its API returns no rate-limit signalling
+  headers on any anonymously observable response. An agent calling the Solve MCP server has no
+  documented budget and no runtime signal telling it how much of that budget remains or when to
+  retry.
+
+limit_count: 0
+documented: false
+
+limits: []
+
+response_headers:
+  observed: []
+  checked:
+    - RateLimit
+    - RateLimit-Limit
+    - RateLimit-Remaining
+    - RateLimit-Reset
+    - RateLimit-Policy
+    - X-RateLimit-Limit
+    - X-RateLimit-Remaining
+    - X-RateLimit-Reset
+    - Retry-After
+  result: >-
+    None present on any observed response. Headers actually returned by the host are
+    strict-transport-security, content-security-policy, referrer-policy, x-content-type-options,
+    x-request-id and access-control-expose-headers.
+  caveat: >-
+    Only unauthenticated responses were observable. A rate-limit header could still be emitted on
+    authenticated 200s or on an authenticated 429; that cannot be ruled out from outside the
+    subscription wall.
+
+exhaustion_status_code: undocumented
+retry_guidance: undocumented
+
+evidence:
+  - url: https://api.solveintelligence.com/health
+    status: 200
+    note: No rate-limit headers in the response.
+  - url: https://api.solveintelligence.com/mcp/
+    status: 401
+    note: >-
+      Returns WWW-Authenticate but no RateLimit-* or Retry-After header.
+  - url: https://www.solveintelligence.com/sitemap.xml
+    status: 200
+    note: No developer, API reference or limits page exists in the site's 231 URLs.
+
+note: >-
+  An honest zero. This is the single most actionable agent-readiness gap on this provider's
+  surface: it ships a real remote MCP server for agents but gives those agents no rate-limit
+  contract to plan against.

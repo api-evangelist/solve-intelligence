@@ -1,23 +1,104 @@
 aid: solve-intelligence
 name: Solve Intelligence
-description: 'Solve Intelligence is a company surfaced via the API Evangelist harvest backlog (source:
-  secondary-market) and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Solve Intelligence builds AI-native software for patent attorneys and intellectual property
+  teams. Its Patent Copilot is an in-browser document editor, comparable to a word processor,
+  with an AI assistant purpose-built for the patent lifecycle: application drafting, claim
+  drafting, office action response and prosecution, invention harvesting and disclosure
+  enhancement, claim and invalidity charting, prior-art and freedom-to-operate searching,
+  infringement and validity analysis, standard-essential patent mapping, patent translation and
+  proofreading. The company was founded by patent attorneys, AI researchers and software
+  engineers, is used by hundreds of law firms and in-house IP teams across six continents, and
+  has raised roughly $55M from Y Combinator, Microsoft, Thomson Reuters, 20VC, Operator
+  Collective and Visionaries. Its public machine-readable surface is a first-party remote Model
+  Context Protocol server, "Solve MCP", which brings global patent literature, non-patent
+  literature, jurisdictional legal texts and case law, and SEP standard documentation into an
+  agent session for subscribers.
+image: https://cdn.prod.website-files.com/6a3bc5ce3cbfe3ee9f91aa1c/6a8c37735149fe1094ae44a6_solveai-opengraph-2026-08.jpg
 url: https://raw.githubusercontent.com/api-evangelist/solve-intelligence/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-28'
 modified: '2026-08-28'
 tags:
 - Company
-apis: []
+- Legal
+- Legal Tech
+- Intellectual Property
+- Patents
+- Artificial Intelligence
+- Document Generation
+- Search
+- Model Context Protocol
+- Agents
+apis:
+- name: Solve MCP
+  description: >-
+    Solve Intelligence's first-party remote Model Context Protocol server. A streamable-HTTP MCP
+    endpoint, authorized with OAuth against the company's own authorization server, that exposes
+    patent and non-patent literature search, jurisdictional legal-text and case-law search, and
+    SEP standard documentation search to MCP clients such as Claude, Claude Code, Codex, Cursor
+    and VS Code. Requires an active Solve Intelligence subscription and must be enabled by a
+    Solve organization administrator.
+  humanURL: https://www.solveintelligence.com/blog/post/solve-intelligence-mcp-server-now-available-in-claude-2
+  baseURL: https://api.solveintelligence.com/mcp/
+  tags:
+  - Model Context Protocol
+  - Agents
+  - Patents
+  - Search
+  properties:
+  - type: MCPServer
+    url: mcp/solve-intelligence-mcp.yml
+  - type: Authentication
+    url: authentication/solve-intelligence-authentication.yml
+  - type: OAuthScopes
+    url: scopes/solve-intelligence-scopes.yml
+  - type: Conventions
+    url: conventions/solve-intelligence-conventions.yml
+  - type: RateLimits
+    url: rate-limits/solve-intelligence-rate-limits.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: TrustCenter
+  url: security/solve-intelligence-trust-center.yml
+- type: DomainSecurity
+  url: security/solve-intelligence-domain-security.yml
 - type: Website
-  url: https://forgeglobal.com/solve-intelligence_stock/
+  url: https://www.solveintelligence.com/
+- type: Documentation
+  url: https://www.solveintelligence.com/blog/post/solve-intelligence-mcp-server-now-available-in-claude-2
+- type: Blog
+  url: https://www.solveintelligence.com/blog
+- type: Login
+  url: https://copilot.solveintelligence.com/
+- type: Support
+  url: https://www.solveintelligence.com/book-demo
+- type: TermsOfService
+  url: https://www.solveintelligence.com/terms
+- type: PrivacyPolicy
+  url: https://www.solveintelligence.com/privacy
+- type: Security
+  url: https://www.solveintelligence.com/security
+- type: Compliance
+  url: conformance/solve-intelligence-conformance.yml
+- type: Conformance
+  url: conformance/solve-intelligence-conformance.yml
+- type: WellKnown
+  url: well-known/solve-intelligence-well-known.yml
+- type: LLMsTxt
+  url: llms/solve-intelligence-llms.txt
+- type: Packages
+  url: packages/solve-intelligence-packages.yml
+- type: Plans
+  url: plans/solve-intelligence-plans-pricing.yml
+x-enrichment:
+  date: '2026-08-28'
+  status: enriched
+  artifacts_added: 14
+  pass: local-v1

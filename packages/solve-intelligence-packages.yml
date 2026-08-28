@@ -1,0 +1,76 @@
+generated: '2026-08-28'
+method: searched
+source: >-
+  Registry metadata queries against registry.npmjs.org and pypi.org, plus the GitHub organization
+  https://github.com/solveintelligence and a full enumeration of the provider's public site
+name: Solve Intelligence packages
+description: >-
+  Solve Intelligence publishes no client libraries. No first-party SDK exists in any public
+  package registry, the company's GitHub organization has zero public repositories, and the MCP
+  server is a hosted remote endpoint requiring no installable package. This is consistent with
+  the product being a subscription web application rather than a developer platform.
+
+package_count: 0
+official_sdk_count: 0
+packages: []
+
+registries_searched:
+  - registry: npm
+    queries:
+      - name: solve-intelligence
+        status: 404
+        version: null
+        published: null
+      - name: solveintelligence
+        status: 404
+        version: null
+        published: null
+      - name: '@solve-intelligence/mcp'
+        status: 404
+        version: null
+        published: null
+    result: no first-party package
+  - registry: pypi
+    queries:
+      - name: solve-intelligence
+        status: 404
+        version: null
+        published: null
+      - name: solveintelligence
+        status: 404
+        version: null
+        published: null
+    result: no first-party package
+  - registry: github
+    queries:
+      - name: solveintelligence
+        status: 200
+        note: >-
+          Organization exists (created 2023-05-04) but reports public_repos: 0 and carries no
+          name, description or website field. Nothing is published from it, and because it
+          carries no identifying metadata its ownership by this company could not be confirmed
+          from the org record alone - so no GitHubOrganization pointer is emitted.
+    result: no public source
+  - registry: maven-central
+    result: not applicable - no JVM surface documented
+  - registry: nuget
+    result: not applicable - no .NET surface documented
+  - registry: rubygems
+    result: not applicable - no Ruby surface documented
+  - registry: crates.io
+    result: not applicable - no Rust surface documented
+  - registry: packagist
+    result: not applicable - no PHP surface documented
+  - registry: pkg.go.dev
+    result: not applicable - no Go surface documented
+
+distribution_note: >-
+  The one integration the provider does ship is installed with no package at all - Claude Code
+  connects to the hosted server with
+  "claude mcp add solve-intelligence --transport http https://api.solveintelligence.com/mcp/".
+  There is no npx package, no CDN bundle and no pinned artifact version to record, so there is no
+  release-recency signal available for this provider.
+
+note: >-
+  No SDKs pointer is emitted in apis.yml, because official_sdk_count is 0. This file records a
+  verified absence.

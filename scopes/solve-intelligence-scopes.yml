@@ -1,0 +1,45 @@
+generated: '2026-08-28'
+method: probed
+source: https://api.solveintelligence.com/.well-known/oauth-protected-resource
+name: Solve Intelligence OAuth scopes
+description: >-
+  The complete scope set Solve Intelligence advertises for its MCP resource server, read
+  verbatim from the scopes_supported array of its RFC 9728 protected-resource metadata and
+  corroborated by the scope parameter in the WWW-Authenticate challenge returned on an
+  unauthenticated call. Both scopes are required together by the challenge.
+docs: null
+docs_note: >-
+  The provider publishes no scopes/permissions reference page. These values come from the
+  machine-readable metadata document itself, which is the authoritative source.
+authorization_server: https://api.solveintelligence.com/auth
+resource: https://api.solveintelligence.com/mcp/
+
+scopes:
+  - name: offline_access
+    description: >-
+      Standard OpenID Connect scope requesting a refresh token, so an MCP client can renew its
+      access token without sending the user back through a browser sign-in.
+    standard: true
+    specification: OpenID Connect Core 1.0
+  - name: mcp:ask_solve
+    description: >-
+      Grants access to the Solve MCP research surface - patent and non-patent literature search,
+      jurisdictional legal-text and case-law search, and SEP standard documentation search.
+    standard: false
+    note: >-
+      The scope name carries the server's tool name, ask_solve. The tool's input schema was not
+      observable anonymously.
+
+scope_count: 2
+granularity: coarse
+granularity_note: >-
+  One functional scope covers the entire research surface. There is no read/write split and no
+  per-capability scope, so an agent granted mcp:ask_solve receives every capability the server
+  exposes. This is typical for a single-tool MCP server and is recorded as an observation, not a
+  defect.
+
+evidence:
+  - url: https://api.solveintelligence.com/.well-known/oauth-protected-resource
+    status: 200
+  - url: https://api.solveintelligence.com/mcp/
+    status: 401

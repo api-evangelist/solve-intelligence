@@ -1,0 +1,50 @@
+generated: '2026-08-28'
+method: searched
+source: >-
+  https://www.solveintelligence.com/sitemap.xml (231 URLs, no pricing page),
+  https://www.solveintelligence.com/pricing (HTTP 404), and the site's own navigation, which
+  routes every commercial call-to-action to https://www.solveintelligence.com/book-demo
+name: Solve Intelligence plans and pricing
+description: >-
+  Solve Intelligence publishes no pricing. There is no /pricing page, no tier table, no
+  per-seat or usage rate, and no machine-readable price catalog. Every commercial path on the
+  site terminates in a booked demo, and MCP access additionally requires an existing subscription
+  that a Solve organization administrator must enable. This is a sales-led enterprise motion, and
+  the zero below is a measured fact rather than a gap in this profile.
+
+plan_count: 0
+pricing_model: sales-led / contact-for-quote
+currency: null
+free_tier: false
+self_serve_signup: false
+trial: >-
+  Not published as a self-serve trial. The only published entry point is a booked demo.
+
+plans: []
+
+access_path:
+  - step: 1
+    action: Book a demo
+    url: https://www.solveintelligence.com/book-demo
+    status: 200
+  - step: 2
+    action: Commercial negotiation with Solve Intelligence (terms not published)
+  - step: 3
+    action: >-
+      A Solve organization administrator enables the MCP integration for users who also hold a
+      Claude (or other MCP client) subscription.
+
+evidence:
+  - url: https://www.solveintelligence.com/pricing
+    status: 404
+  - url: https://www.solveintelligence.com/book-demo
+    status: 200
+  - url: https://www.solveintelligence.com/sitemap.xml
+    status: 200
+    note: >-
+      Full sitemap enumerated; the only non-blog pages are home, product/overview, security,
+      about, legal, terms, privacy, blog and book-demo. No pricing page exists.
+
+note: >-
+  Third-party sites publish estimated Solve Intelligence pricing. None of it is sourced from the
+  provider, so none of it is recorded here.

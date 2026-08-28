@@ -1,0 +1,137 @@
+generated: '2026-08-28'
+method: probed
+source: >-
+  Direct unauthenticated GET of each /.well-known/ path on every Solve Intelligence host
+  (API host, marketing host, application host) on 2026-08-28.
+name: Solve Intelligence well-known documents
+description: >-
+  Probe of the RFC 8615 well-known namespace across the Solve Intelligence hosts. The API host
+  api.solveintelligence.com serves a real RFC 9728 OAuth protected-resource document describing
+  the "Solve MCP" server, and the SuperTokens-backed authorization server publishes OpenID
+  Connect discovery metadata under /auth. The Webflow marketing host answers every
+  /.well-known/ path with an "Invalid .well-known request" 404 page, and the application host
+  copilot.solveintelligence.com is a single-page app that returns HTTP 200 with an HTML shell
+  for every /.well-known/ path - those 200s are SPA catch-alls, not documents, and are recorded
+  as misses.
+
+hosts:
+  - host: api.solveintelligence.com
+    note: >-
+      Primary API host. Serves the MCP server and its OAuth authorization server. Runs FastAPI
+      behind nginx (identified from the Content-Security-Policy header, which references
+      fastapi.tiangolo.com and swagger-ui-dist) with SuperTokens for identity.
+    documents:
+      - path: /.well-known/oauth-protected-resource
+        status: 200
+        file: solve-intelligence-oauth-protected-resource.json
+        content_type: application/json
+        note: >-
+          RFC 9728 OAuth 2.0 Protected Resource Metadata. Declares resource
+          https://api.solveintelligence.com/mcp/, resource_name "Solve MCP", authorization server
+          https://api.solveintelligence.com/auth, and scopes_supported [offline_access,
+          mcp:ask_solve].
+      - path: /auth/.well-known/openid-configuration
+        status: 200
+        file: solve-intelligence-openid-configuration.json
+        content_type: application/json
+        note: >-
+          OpenID Connect discovery document for the authorization server. Not at the host root -
+          the issuer is https://api.solveintelligence.com/auth, so discovery is served under that
+          issuer path. The root /.well-known/openid-configuration returns 404.
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+        file: null
+        note: >-
+          RFC 8414 metadata is not served at the root. The equivalent document is reachable via
+          the OIDC discovery path under the issuer (/auth/.well-known/openid-configuration).
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 404
+        file: null
+      - path: /.well-known/agent.json
+        status: 404
+        file: null
+  - host: www.solveintelligence.com
+    note: >-
+      Webflow-hosted marketing site. Returns a branded "Invalid .well-known request" HTML 404 for
+      every path in the namespace. Does serve a real /llms.txt (captured in llms/).
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+        file: null
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 404
+        file: null
+      - path: /.well-known/agent.json
+        status: 404
+        file: null
+  - host: copilot.solveintelligence.com
+    note: >-
+      The Patent Copilot single-page application. Every /.well-known/ path returns HTTP 200 with
+      the application's HTML shell (text/html, "<!doctype html>"). These are SPA catch-all
+      responses, NOT served documents, and are deliberately recorded as misses - a 200 carrying
+      an HTML shell is not a well-known document.
+    documents:
+      - path: /.well-known/oauth-protected-resource
+        status: 200
+        file: null
+        content_type: text/html
+        served_document: false
+        note: SPA catch-all HTML shell, not a document.
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        file: null
+        content_type: text/html
+        served_document: false
+        note: SPA catch-all HTML shell, not a document.
+      - path: /.well-known/openid-configuration
+        status: 200
+        file: null
+        content_type: text/html
+        served_document: false
+        note: SPA catch-all HTML shell, not a document.
+      - path: /.well-known/api-catalog
+        status: 200
+        file: null
+        content_type: text/html
+        served_document: false
+        note: SPA catch-all HTML shell, not a document.
+      - path: /.well-known/agent-card.json
+        status: 404
+        file: null
+      - path: /.well-known/agent.json
+        status: 404
+        file: null
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+
+summary:
+  hosts_probed: 3
+  documents_served: 2
+  security_txt: false
+  api_catalog: false
+  agent_card: false
+  note: >-
+    Two real documents served, both on api.solveintelligence.com and both OAuth/OIDC discovery.
+    No security.txt, no api-catalog, and no A2A agent card anywhere on the estate.

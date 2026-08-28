@@ -1,0 +1,91 @@
+generated: '2026-08-28'
+method: probed
+source: >-
+  https://api.solveintelligence.com/.well-known/oauth-protected-resource (HTTP 200),
+  https://api.solveintelligence.com/auth/.well-known/openid-configuration (HTTP 200), and the
+  WWW-Authenticate challenge returned by https://api.solveintelligence.com/mcp/ (HTTP 401)
+name: Solve Intelligence authentication
+description: >-
+  Solve Intelligence protects its public MCP surface with OAuth 2.0 bearer tokens issued by a
+  first-party authorization server it operates at https://api.solveintelligence.com/auth. The
+  deployment is standards-forward: the resource server advertises RFC 9728 protected-resource
+  metadata, returns a conformant RFC 6750 WWW-Authenticate challenge naming both the metadata
+  URL and the required scopes, and the authorization server publishes OpenID Connect discovery
+  metadata. This is discoverable without credentials, which is why this profile can describe the
+  auth model precisely even though the API itself is subscription-gated.
+
+schemes:
+  - id: solve_mcp_oauth
+    type: oauth2
+    scheme_class: OAuth 2.0 / OpenID Connect
+    description: >-
+      Authorization-code flow with a browser sign-in on first connect. MCP clients then reuse the
+      issued credentials for subsequent sessions; the offline_access scope supports refresh.
+    flows:
+      authorizationCode:
+        authorizationUrl: https://api.solveintelligence.com/auth/oauth/auth
+        tokenUrl: https://api.solveintelligence.com/auth/oauth/token
+        refreshUrl: https://api.solveintelligence.com/auth/oauth/token
+        scopes:
+          offline_access: Issue a refresh token so the client can renew access without a new
+            browser sign-in.
+          mcp:ask_solve: Call the Solve MCP research surface.
+    bearer_methods_supported:
+      - header
+    in: header
+    header: Authorization
+    format: Bearer <token>
+    applies_to:
+      - https://api.solveintelligence.com/mcp/
+
+authorization_server:
+  issuer: https://api.solveintelligence.com/auth
+  implementation: >-
+    SuperTokens (identified from the Content-Security-Policy header served by the API host, which
+    allowlists cdn.jsdelivr.net/gh/supertokens/).
+  endpoints:
+    authorization: https://api.solveintelligence.com/auth/oauth/auth
+    token: https://api.solveintelligence.com/auth/oauth/token
+    userinfo: https://api.solveintelligence.com/auth/oauth/userinfo
+    revocation: https://api.solveintelligence.com/auth/oauth/revoke
+    introspection: https://api.solveintelligence.com/auth/oauth/introspect
+    end_session: https://api.solveintelligence.com/auth/oauth/end_session
+    jwks: https://api.solveintelligence.com/auth/jwt/jwks.json
+  subject_types_supported:
+    - public
+  id_token_signing_alg_values_supported:
+    - RS256
+  response_types_supported:
+    - code
+    - id_token
+    - id_token token
+
+challenge:
+  status: 401
+  www_authenticate: >-
+    Bearer realm="mcp",
+    resource_metadata="https://api.solveintelligence.com/.well-known/oauth-protected-resource",
+    scope="offline_access mcp:ask_solve"
+  body: MCP bearer token is required
+  note: >-
+    A conformant RFC 9728 challenge. An MCP client that receives this can discover the
+    authorization server and required scopes with no out-of-band configuration, which is the
+    behaviour the spec asks for and which most gated MCP servers still do not implement.
+
+entitlement:
+  subscription_required: true
+  note: >-
+    An active Solve Intelligence subscription is required, and the provider states that only
+    Solve organization administrators can enable the MCP integration for their users. There is no
+    self-serve developer signup, no API key issuance page, and no public sandbox.
+
+sso:
+  note: >-
+    Not documented on any public page. The security page describes encryption, subprocessor
+    regionality and training exclusions but does not name SSO/SAML/MFA support.
+
+gaps:
+  - The REST OpenAPI at https://api.solveintelligence.com/openapi.json returns HTTP 401, so the
+    full securityScheme set for the underlying REST API could not be read anonymously.
+  - No /.well-known/oauth-authorization-server at the host root; RFC 8414 discovery is only
+    reachable through the OIDC path under the issuer.

@@ -1,0 +1,101 @@
+# Solve Intelligence
+
+> AI-powered software that helps patent attorneys draft, analyze, and manage IP work faster and more accurately
+
+Solve Intelligence builds AI-native software for patent attorneys and IP teams, covering patent drafting, claim charting, invalidity analysis, prior art search, and prosecution workflows. The platform is designed to integrate into existing attorney workflows while maintaining data confidentiality and security standards required by law firms and corporate IP departments.
+
+The site serves patent attorneys, IP professionals, law firms, and corporate legal teams evaluating AI tools for patent work. It includes product information, security details, customer case studies, and an extensive blog covering AI in patent practice, regulatory guidance (EPO, USPTO, UPC), and best practices for adopting AI responsibly in IP work.
+
+Key resources include the product overview, security page, and a large blog archive with articles on AI patent drafting, claim charting, invalidity charts, prior art analysis, ethical guidelines, and firm partnership announcements. Legal pages cover terms, privacy, and general legal information.
+
+## Core Services
+
+- [Home | Solve Intelligence](https://www.solveintelligence.com): AI software platform for patent drafting and IP practice management
+- [Product Overview | Solve Intelligence](https://www.solveintelligence.com/product/overview): Overview of Solve Intelligence's AI patent drafting and analysis platform
+- [Security | Solve Intelligence](https://www.solveintelligence.com/security): Details on data security and confidentiality standards for the platform
+- [Book a Demo | Solve Intelligence](https://www.solveintelligence.com/book-demo): Schedule a demo of the Solve Intelligence platform
+- [Booking | Solve Intelligence](https://www.solveintelligence.com/booking): Book a meeting or demo with the Solve Intelligence team
+
+## Blog Articles
+
+- [Blog | Solve Intelligence Blog](https://www.solveintelligence.com/blog): Articles on AI in patent drafting, prosecution, and IP practice
+- [10 Tips for Patent Attorneys to Use AI Effectively | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/10-tips-for-patent-attorneys-to-use-ai-effectively): Practical tips for attorneys to use AI tools effectively
+- [5 Benefits of Integrating AI in Your IP Practice | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/5-benefits-of-integrating-ai-in-your-ip-practice): Key benefits of adopting AI within an IP practice
+- [5 Best Invention Harvesting Tools for Patent Attorneys | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/5-best-invention-harvesting-tools-for-patent-attorneys): Roundup of top invention harvesting tools for attorneys
+- [Adopting AI in Patent Work: A Practical Playbook | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/adopting-ai-in-patent-work-a-practical-playbook-for-ip-teams): Playbook for IP teams adopting AI into patent workflows
+- [AI Assistance vs Inventorship Ethics | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/ai-assistance-vs-inventorship-ethical-guidelines-for-patent-attorneys): Ethical guidelines distinguishing AI assistance from inventorship
+- [AI Claim Charting in Patent Prosecution | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/ai-claim-charting-patent-prosecution): How AI improves claim charting during patent prosecution
+- [AI Data Confidentiality in Patent Drafting | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/ai-data-confidentiality-patent-drafting): Confidentiality considerations when using AI for drafting patents
+- [AI for Patent Drawings and Figure Labeling | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/ai-for-patent-drawings-figure-generation-and-labeling): Using AI to generate and label patent drawings and figures
+- [AI for Solo Patent Attorneys and Small Firms | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/ai-for-solo-patent-attorneys-and-small-firms): How solo attorneys and small firms can leverage AI tools
+- [AI-Generated Prior Art and Patent Examination | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/ai-generated-prior-art-navigating-the-future-of-patent-examination): Navigating the future of patent examination with AI-generated prior art
+- [AI Hallucinations: Risks and Prevention | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/ai-hallucinations-risks-and-prevention-in-legal-ai-tools): Risks of AI hallucinations and prevention strategies in legal AI
+- [Should You Use ChatGPT for Patent Drafting? | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/ai-in-patent-drafting-should-you-use-chatgpt): Evaluating whether ChatGPT is suitable for patent drafting
+- [AI Invalidity Chart Guide | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/ai-invalidity-chart-guide): Guide to creating invalidity charts using AI
+- [AI Patent Analysis: Benefits and Best Practices | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/ai-patent-analysis-benefits-challenges-and-best-practices): Benefits, challenges and best practices for AI patent analysis
+- [AI Patent Application Drafting | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/ai-patent-application-drafting): How AI supports drafting complete patent applications
+- [AI Patent Claim Drafting | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/ai-patent-claim-drafting): Using AI to draft stronger patent claims
+- [Patent Drafting Copilot vs GPT | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/ai-patent-drafting-patent-drafting-copilot-vs-gpt): Comparing specialized patent drafting copilots to general GPT tools
+- [AI Patent Drafting Tools at AIPLA | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/ai-patent-drafting-tools-at-aipla): Highlights of AI patent drafting tools showcased at AIPLA
+- [AI Patent Drafting with Example-Based Customization | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/ai-patent-drafting-with-example-based-customization): Customizing AI patent drafting outputs using examples
+- [AI Patent Figure Drafting | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/ai-patent-figure-drafting): Using AI to draft patent figures efficiently
+- [AI Patent Law Trends: European IPO Insights | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/ai-patent-law-trends-european-ipo-insights): Insights on AI patent law trends from European IPOs
+- [AI Patent Protection in Europe | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/ai-patent-protection-in-europe-strategic-insights): Strategic insights into protecting AI patents in Europe
+- [AI Patent Tools | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/ai-patent-tools): Overview of available AI tools for patent professionals
+- [AI Patent Tools Evaluations | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/ai-patent-tools---evaluations): Evaluations comparing different AI patent tools
+- [AI Patent Translations | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/ai-patent-translations): Using AI to translate patent documents accurately
+- [AI Review | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/ai-review): Review of AI capabilities for patent practice
+- [AI Tools for Patent Attorneys | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/ai-tools-for-patent-attorneys): Survey of AI tools available for patent attorneys
+- [AI x IP Thought Leader Exchange | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/ai-x-ip-thought-leader-exchange-with-solve-intelligence-haynes-boone-and-100-leading-voices-in-ip): Recap of thought leader exchange on AI and IP with Haynes Boone
+- [AIPLA Spring Meeting | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/aipla-spring-meeting): Recap of Solve Intelligence's presence at AIPLA Spring Meeting
+- [Aliza Panjwani Joins Solve Intelligence | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/aliza-panjwani-joins-solve-intelligence): Announcement of Aliza Panjwani joining the Solve team
+- [Altacit Global Enhances Workflows with Solve | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/altacit-global-enhances-patent-drafting-workflows-with-solve-intelligence): Case study on Altacit Global improving drafting workflows
+- [Analyzing and Enhancing Invention Disclosures with AI | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/analyzing-and-enhancing-invention-disclosures-with-ai): Using AI to improve invention disclosure quality
+- [Announcing Solve Intelligence's Customer Advisory Board | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/announcing-solve-intelligences-customer-advisory-board): Announcement of Solve Intelligence's new customer advisory board
+- [Prior Art in the Age of AI | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/attention-is-all-you-need-prior-art-in-the-age-of-ai): Exploring prior art search implications in the age of AI
+- [Automated Patent Proofreading QA Framework | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/automated-patent-proofreading-qa-framework): Framework for automated quality assurance in patent proofreading
+- [Barrett Cole Joins Solve | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/barrett-cole-joins-solve): Announcement of Barrett Cole joining Solve Intelligence
+- [Best AI Patent Drafting Tools | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/best-ai-patent-drafting-tools): Roundup of the best AI tools for patent drafting
+- [Best AI Patent Prosecution Tools | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/best-ai-patent-patent-prosecution-tools): Top AI tools for patent prosecution work
+- [Best Patent Proofreading Software for Law Firms | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/best-patent-proofreading-software-for-law-firms): Comparison of top proofreading software for patent law firms
+- [Best Proofreading Software Solutions for Law Firms | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/best-patent-proofreading-software-solutions-for-law-firms): Detailed look at proofreading software solutions for law firms
+- [Bookoff McAndrews Partners with Solve Intelligence | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/bookoff-mcandrews-and-solve-intelligence-partner-to-support-patent-prosecution-practice): Partnership announcement supporting patent prosecution practice
+- [Bree Vculek Joins Solve Intelligence | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/bree-vculek-joins-solve-intelligence): Announcement of Bree Vculek joining the Solve team
+- [LexisNexis Litigation Data in Solve Workflows | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/bringing-lexisnexis-global-patent-litigation-data-into-solve-intelligence-workflows): Integrating LexisNexis global patent litigation data into Solve
+- [Building AI for Patent Practice | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/building-ai-for-patent-practice): Insights on building AI tools tailored for patent practice
+- [Building AI Tools That Patent Attorneys Trust | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/building-ai-tools-that-patent-attorneys-trust): Approach to building trustworthy AI tools for attorneys
+- [Banner Witcoff Raises the Bar with Solve Intelligence | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/built-for-ip-how-banner-witcoff-is-raising-the-bar-on-patent-work-with-solve-intelligence): Case study on Banner Witcoff's improved patent work with Solve
+- [Chantal Whitfield Joins Solve | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/chantal-whitfield-joins-solve): Announcement of Chantal Whitfield joining Solve Intelligence
+- [Christian Berrios Joins Solve | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/christian-berrios-joins-solve): Announcement of Christian Berrios joining Solve Intelligence
+- [Client Confidentiality in the Age of AI | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/client-confidentiality-in-the-age-of-ai-best-practices-for-patent-professionals): Best practices for maintaining client confidentiality with AI
+- [Client Consent for AI: PCC Opinion on EPI Guidelines | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/client-consent-for-ai-pcc-opinion-on-epi-guidelines): PCC opinion on client consent requirements for AI use
+- [Conducting a Novelty or Prior Art Search | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/conducting-a-novelty-or-prior-art-search): Guide to conducting effective novelty and prior art searches
+- [Critical Patent Application Mistakes | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/critical-patent-application-mistakes): Common mistakes to avoid in patent applications
+- [Custom Styles | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/custom-styles): Overview of custom style options within the platform
+- [Dan Rudoy to Join Solve's Customer Advisory Board | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/dan-rudoy-to-join-solves-customer-advisory-board): Announcement of Dan Rudoy joining the customer advisory board
+- [Data Residency Explained | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/data-residency-explained-why-server-location-matters-for-ai-patent-software): Why server location matters for AI patent software security
+- [Dina Blikshteyn to Join Advisory Board | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/dina-blikshteyn-to-join-solve-intelligences-customer-advisory-board): Announcement of Dina Blikshteyn joining the advisory board
+- [Dmitry Andreev to Join Advisory Board | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/dmitry-andreev-to-join-solves-customer-advisory-board): Announcement of Dmitry Andreev joining the advisory board
+- [Drafting for the EPO: AI and the EPO-IP Australia PCT Pilot | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/drafting-for-the-epo-how-ai-can-make-the-new-epo-ip-australia-pct-pilot-a-success): How AI can support the new EPO-IP Australia PCT pilot program
+- [Drafting for the UPC: Early Equivalents Decisions | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/drafting-for-the-upc-what-early-equivalents-decisions-tell-us-about-claim-scope): What early UPC equivalents decisions reveal about claim scope
+- [Drawings and Reference Labels | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/drawings-and-reference-labels): Best practices for patent drawings and reference labeling
+- [Empowering IP with AI: A Future IP UK Perspective | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/empowering-ip-with-ai-a-future-ip-uk-perspective): UK perspective on empowering IP practice with AI
+- [Haynes Boone Evaluates Patent Practice Enhancements | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/engineering-excellence-how-haynes-boone-is-evaluating-enhancements-to-patent-practice-with-solve-intelligence): Haynes Boone's evaluation of Solve Intelligence enhancements
+- [EPI Guidelines on Generative AI for Patent Attorneys | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/epi-guidelines---use-of-generative-ai-for-patent-attorneys): Overview of EPI guidelines for generative AI use by attorneys
+- [EPO G1/26: Coated Steel Strips | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/epo-g1-26-coated-steel-strips): Analysis of EPO decision G1/26 regarding coated steel strips
+- [EPO Guidelines 2025 | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/epo-guidelines-2025): Summary of updated EPO guidelines for 2025
+- [EPO Guidelines 2026: Key Changes | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/epo-guidelines-2026-key-changes): Key changes introduced in the 2026 EPO guidelines
+- [EPO Disclosure Requirements for AI Patent Applications | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/epo-practice-update-disclosure-requirements-for-ai-patent-applications): EPO practice update on disclosure requirements for AI patents
+- [EPO to Use AI Tools for Minuting Oral Proceedings | Solve Intelligence Blog](https://www.solveintelligence.com/blog/post/epo-to-use-ai-tools-minuting-oral-proceedings): EPO's adoption of AI tools for minuting oral proceedings
+
+## Legal & Policies
+
+- [alice-](,): .://Overve Intelligence Legal | policy-related pages including trust and compliance
+- [About | Solve Intelligence](https://www.solveintelligence.com/about): Company background and mission for Solve Intelligence
+- [Legal | Solve Intelligence](https://www.solveintelligence.com/legal): General legal information for Solve Intelligence
+- [Terms of Service | Solve Intelligence](https://www.solveintelligence.com/terms): Terms of service governing use of the Solve Intelligence platform
+- [Privacy Policy | Solve Intelligence](https://www.solveintelligence.com/privacy): Privacy policy detailing data handling practices
+
+---
+
+This file was generated for www.solveintelligence.com using FirstMotion (https://firstmotion.com)
