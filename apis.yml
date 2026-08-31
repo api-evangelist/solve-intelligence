@@ -41,6 +41,17 @@ tags:
 - Artificial Intelligence
 - Document Generation
 - Search
+- MCP
+- Agents
+tags_raw:
+- Company
+- Legal
+- Legal Tech
+- Intellectual Property
+- Patents
+- Artificial Intelligence
+- Document Generation
+- Search
 - Model Context Protocol
 - Agents
 apis:
@@ -55,6 +66,11 @@ apis:
   humanURL: https://www.solveintelligence.com/blog/post/solve-intelligence-mcp-server-now-available-in-claude-2
   baseURL: https://api.solveintelligence.com/mcp/
   tags:
+  - MCP
+  - Agents
+  - Patents
+  - Search
+  tags_raw:
   - Model Context Protocol
   - Agents
   - Patents
