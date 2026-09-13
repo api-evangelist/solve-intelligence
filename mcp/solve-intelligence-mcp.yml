@@ -1,21 +1,15 @@
 generated: '2026-08-28'
 method: probed
-source: >-
-  https://api.solveintelligence.com/.well-known/oauth-protected-resource (HTTP 200) and a
-  POST tools/list to https://api.solveintelligence.com/mcp/ (HTTP 401 with an RFC 9728
-  WWW-Authenticate challenge), corroborated by the provider's own announcement at
-  https://www.solveintelligence.com/blog/post/solve-intelligence-mcp-server-now-available-in-claude-2
+source: https://api.solveintelligence.com/.well-known/oauth-protected-resource (HTTP 200) and a POST tools/list
+  to https://api.solveintelligence.com/mcp/ (HTTP 401 with an RFC 9728 WWW-Authenticate challenge), corroborated
+  by the provider's own announcement at https://www.solveintelligence.com/blog/post/solve-intelligence-mcp-server-now-available-in-claude-2
 name: Solve MCP
-description: >-
-  Solve Intelligence publishes a first-party remote MCP server that exposes a slice of its
-  Patent Copilot research surface to MCP clients. It is the only machine-callable API surface
-  the company publishes to the open internet. The server brings global patent literature,
-  non-patent literature (papers, books, theses, datasets, journals), patent legal texts and
-  case law across the US, Europe, Japan and Australia, and SEP technical standard
-  documentation into an agent session.
-
+description: Solve Intelligence publishes a first-party remote MCP server that exposes a slice of its
+  Patent Copilot research surface to MCP clients. It is the only machine-callable API surface the company
+  publishes to the open internet. The server brings global patent literature, non-patent literature (papers,
+  books, theses, datasets, journals), patent legal texts and case law across the US, Europe, Japan and
+  Australia, and SEP technical standard documentation into an agent session.
 status: live
-
 deployment:
   mode: remote
   endpoint: https://api.solveintelligence.com/mcp/
@@ -24,84 +18,75 @@ deployment:
   package: null
   auth: oauth
   verified: probed
-
+  probe_prior: (never probed)
+  probe: gated
+  probe_why: RFC 9728 challenge on the MCP path only
+  checked: '2026-09-11'
+  source: claimed-backlog re-probe 2026-09-11
 authorization:
-  model: OAuth 2.1 authorization code with browser sign-in, per RFC 9728 protected-resource
-    metadata
+  model: OAuth 2.1 authorization code with browser sign-in, per RFC 9728 protected-resource metadata
   resource: https://api.solveintelligence.com/mcp/
   resource_name: Solve MCP
   authorization_server: https://api.solveintelligence.com/auth
   bearer_methods_supported:
-    - header
+  - header
   scopes_supported:
-    - offline_access
-    - mcp:ask_solve
-  www_authenticate: >-
-    Bearer realm="mcp",
-    resource_metadata="https://api.solveintelligence.com/.well-known/oauth-protected-resource",
+  - offline_access
+  - mcp:ask_solve
+  www_authenticate: Bearer realm="mcp", resource_metadata="https://api.solveintelligence.com/.well-known/oauth-protected-resource",
     scope="offline_access mcp:ask_solve"
-  entitlement: >-
-    An active Solve Intelligence subscription is required. The provider states that only Solve
+  entitlement: An active Solve Intelligence subscription is required. The provider states that only Solve
     organization administrators can enable the integration for their users.
-
 tools:
   status: gated
-  note: >-
-    tools/list was probed anonymously on 2026-08-28 and returned HTTP 401 "MCP bearer token is
-    required" with an RFC 9728 challenge, so the live tool set and its inputSchema could not be
-    read. NOT FABRICATED: the single entry below is the tool name carried in the provider's own
-    published OAuth scope string (mcp:ask_solve) and its capability description is taken from the
-    provider's announcement post. Input schemas require authenticated introspection.
+  note: 'tools/list was probed anonymously on 2026-08-28 and returned HTTP 401 "MCP bearer token is required"
+    with an RFC 9728 challenge, so the live tool set and its inputSchema could not be read. NOT FABRICATED:
+    the single entry below is the tool name carried in the provider''s own published OAuth scope string
+    (mcp:ask_solve) and its capability description is taken from the provider''s announcement post. Input
+    schemas require authenticated introspection.'
   items:
-    - name: ask_solve
-      source: >-
-        Inferred from the published OAuth scope "mcp:ask_solve" in
-        /.well-known/oauth-protected-resource. Name only - no schema was observable anonymously.
-      confidence: medium
-      described_capabilities:
-        - Search global patent literature across every major jurisdiction
-        - Search non-patent literature including scientific papers, books, theses, datasets and
-          journals
-        - Search patent legal texts and case law across the US, Europe, Japan and Australia
-        - Search SEP technical standard documentation
-        - Find products that may infringe a specified patent claim
-        - Freedom-to-operate and clearance searching in a target market
-        - Invalidity searching and prior-art identification
-
+  - name: ask_solve
+    source: Inferred from the published OAuth scope "mcp:ask_solve" in /.well-known/oauth-protected-resource.
+      Name only - no schema was observable anonymously.
+    confidence: medium
+    described_capabilities:
+    - Search global patent literature across every major jurisdiction
+    - Search non-patent literature including scientific papers, books, theses, datasets and journals
+    - Search patent legal texts and case law across the US, Europe, Japan and Australia
+    - Search SEP technical standard documentation
+    - Find products that may infringe a specified patent claim
+    - Freedom-to-operate and clearance searching in a target market
+    - Invalidity searching and prior-art identification
 clients:
   documented:
-    - name: Claude
-      method: Connector directory
-      reference: https://claude.com/connectors/solve-intelligence
-    - name: Claude Code
-      method: CLI
-      command: claude mcp add solve-intelligence --transport http https://api.solveintelligence.com/mcp/
-    - name: Codex
-      method: Documented by the provider; exact configuration not published on a public page
-    - name: Cursor
-      method: Documented by the provider; exact configuration not published on a public page
-    - name: VS Code
-      method: Documented by the provider; exact configuration not published on a public page
-
+  - name: Claude
+    method: Connector directory
+    reference: https://claude.com/connectors/solve-intelligence
+  - name: Claude Code
+    method: CLI
+    command: claude mcp add solve-intelligence --transport http https://api.solveintelligence.com/mcp/
+  - name: Codex
+    method: Documented by the provider; exact configuration not published on a public page
+  - name: Cursor
+    method: Documented by the provider; exact configuration not published on a public page
+  - name: VS Code
+    method: Documented by the provider; exact configuration not published on a public page
 evidence:
-  - url: https://api.solveintelligence.com/.well-known/oauth-protected-resource
-    status: 200
-    note: RFC 9728 protected-resource metadata naming the MCP resource and its scopes.
-  - url: https://api.solveintelligence.com/mcp/
-    status: 401
-    note: >-
-      POST {"jsonrpc":"2.0","id":1,"method":"tools/list"} returned 401 "MCP bearer token is
-      required" with a WWW-Authenticate Bearer challenge.
-  - url: https://api.solveintelligence.com/auth/.well-known/openid-configuration
-    status: 200
-    note: OpenID Connect discovery for the authorization server.
-  - url: https://www.solveintelligence.com/blog/post/solve-intelligence-mcp-server-now-available-in-claude-2
-    status: 200
-    note: Provider announcement, published 2026-05-12.
-
+- url: https://api.solveintelligence.com/.well-known/oauth-protected-resource
+  status: 200
+  note: RFC 9728 protected-resource metadata naming the MCP resource and its scopes.
+- url: https://api.solveintelligence.com/mcp/
+  status: 401
+  note: POST {"jsonrpc":"2.0","id":1,"method":"tools/list"} returned 401 "MCP bearer token is required"
+    with a WWW-Authenticate Bearer challenge.
+- url: https://api.solveintelligence.com/auth/.well-known/openid-configuration
+  status: 200
+  note: OpenID Connect discovery for the authorization server.
+- url: https://www.solveintelligence.com/blog/post/solve-intelligence-mcp-server-now-available-in-claude-2
+  status: 200
+  note: Provider announcement, published 2026-05-12.
 data_handling:
-  training: >-
-    The provider states that no data uploaded to or generated by the platform is used to train
+  training: The provider states that no data uploaded to or generated by the platform is used to train
     any AI model.
   encryption: AES-256 at rest, TLS 1.3 in transit
   source: https://www.solveintelligence.com/security
