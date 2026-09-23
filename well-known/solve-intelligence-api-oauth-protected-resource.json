@@ -1,0 +1,1 @@
+{"resource":"https://api.solveintelligence.com/mcp/","authorization_servers":["https://api.solveintelligence.com/auth"],"scopes_supported":["offline_access","mcp:ask_solve"],"bearer_methods_supported":["header"],"resource_name":"Solve MCP"}
