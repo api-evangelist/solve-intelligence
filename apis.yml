@@ -108,6 +108,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: RateLimits
+  url: rate-limits/solve-intelligence-rate-limits.yml
 - type: TrustCenter
   url: security/solve-intelligence-trust-center.yml
 - type: DomainSecurity
