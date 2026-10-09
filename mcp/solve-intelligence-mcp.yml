@@ -90,3 +90,20 @@ data_handling:
     any AI model.
   encryption: AES-256 at rest, TLS 1.3 in transit
   source: https://www.solveintelligence.com/security
+rfc9728:
+  endpoint: https://api.solveintelligence.com/mcp/
+  metadata_url: https://api.solveintelligence.com/.well-known/oauth-protected-resource
+  discovered_via: WWW-Authenticate resource_metadata on an anonymous POST initialize
+  fetched: '2026-09-25'
+  http_status: 200
+  content_type: application/json
+  document:
+    resource: https://api.solveintelligence.com/mcp/
+    authorization_servers:
+    - https://api.solveintelligence.com/auth
+    scopes_supported:
+    - offline_access
+    - mcp:ask_solve
+    bearer_methods_supported:
+    - header
+    resource_name: Solve MCP
